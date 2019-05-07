@@ -9,6 +9,8 @@ const Container = styled.header`
   top: 0;
   left: 0;
   position: sticky;
+  z-index: 10;
+  /* visibility: none; */
 `
 
 const Header = ({ siteTitle }) => <Container />

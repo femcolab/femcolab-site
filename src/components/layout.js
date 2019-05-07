@@ -25,7 +25,25 @@ const Footer = styled.footer`
   height: 50px;
   background-color: pink;
 `
+const Menu = styled.nav`
+  height: 100vh;
+  width: 100vw;
+  background-color: tomato;
+  z-index: 20;
+`
 
+const List = styled.ul`
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 100px;
+`
+
+const ListItem = styled.li`
+  a {
+    text-decoration: none;
+  }
+`
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -40,6 +58,25 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
+        <Menu>
+          <List>
+            <ListItem>
+              <a href="#community">Community</a>
+            </ListItem>
+            <ListItem>
+              <a href="#members">Members</a>
+            </ListItem>
+            <ListItem>
+              <a href="/">Join Us</a>
+            </ListItem>
+            <ListItem>
+              <a href="#wemeetfor">We Meet For</a>
+            </ListItem>
+            <ListItem>
+              <a href="#gallery">Gallery</a>
+            </ListItem>
+          </List>
+        </Menu>
         <Container>
           <main>{children}</main>
           <Footer>FemCoLab 2019</Footer>
