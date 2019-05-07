@@ -5,23 +5,13 @@ import styled from "styled-components"
 
 const Container = styled.header`
   background-color: slateblue;
+  height: 100px;
+  top: 0;
+  left: 0;
+  position: sticky;
 `
 
-const Header = ({ siteTitle }) => (
-  <Container>
-    <h1 style={{ margin: 0 }}>
-      <Link
-        to="/"
-        style={{
-          color: `white`,
-          textDecoration: `none`,
-        }}
-      >
-        {siteTitle}
-      </Link>
-    </h1>
-  </Container>
-)
+const Header = ({ siteTitle }) => <Container />
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

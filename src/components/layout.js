@@ -21,6 +21,11 @@ const Container = styled.div`
   border: solid 1px red;
 `
 
+const Footer = styled.footer`
+  height: 50px;
+  background-color: pink;
+`
+
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -37,11 +42,7 @@ const Layout = ({ children }) => (
         <Header siteTitle={data.site.siteMetadata.title} />
         <Container>
           <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
+          <Footer>FemCoLab 2019</Footer>
         </Container>
       </>
     )}
