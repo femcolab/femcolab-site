@@ -1,15 +1,15 @@
 const path = require("path")
 
-const createPagePath = memberName =>
-  `/member/${memberName
-    .split(" ")
-    .join("-")
-    .toLowerCase()}`
-
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
   const memberTemplate = path.resolve(`src/templates/member.js`)
+
+  const createPagePath = name =>
+    `/member/${name
+      .split(" ")
+      .join("-")
+      .toLowerCase()}`
 
   return graphql(`
     {
@@ -20,7 +20,7 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             frontmatter {
-              path
+              name
             }
           }
         }
@@ -33,9 +33,11 @@ exports.createPages = ({ actions, graphql }) => {
     console.log("result: ", JSON.stringify(result))
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
-        path: node.frontmatter.path,
+        path: createPagePath(node.frontmatter.name),
         component: memberTemplate,
-        context: {}, // additional data can be passed via context
+        context: {
+          name: node.frontmatter.name,
+        }, // additional data can be passed via context
       })
     })
   })
