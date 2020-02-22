@@ -5,13 +5,14 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React, { ReactNode } from "react"
-import { StaticQuery, graphql } from "gatsby"
-import styled, { ThemeProvider } from "styled-components"
-import { GlobalStyles } from "../styles/global"
-import { theme } from "../styles/theme"
+import React, { ReactNode } from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import styled, { ThemeProvider } from 'styled-components'
+import { GlobalStyles } from './styles/global'
+import { theme } from './styles/theme'
 
-import Header from "./header"
+import Burger from '../burger'
+// import Header from "../header"
 
 const Container = styled.div`
   margin: 0 auto;
@@ -49,7 +50,7 @@ type Props = {
   children: ReactNode
 }
 
-const Layout = ({ children }: Props) => (
+const View = ({ children }: Props) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -63,7 +64,8 @@ const Layout = ({ children }: Props) => (
     render={data => (
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Burger />
+        {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
         <Menu>
           <List>
             <ListItem>
@@ -92,4 +94,4 @@ const Layout = ({ children }: Props) => (
   />
 )
 
-export default Layout
+export default View
