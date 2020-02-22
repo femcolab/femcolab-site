@@ -1,3 +1,4 @@
+/*eslint @typescript-eslint/camelcase: ["error", {properties: "never"}]*/
 module.exports = {
   siteMetadata: {
     title: `Female Coders Lab`,
