@@ -7,10 +7,11 @@
 
 import React, { ReactNode } from "react"
 import { StaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
+import { GlobalStyles } from "../styles/global"
+import { theme } from "../styles/theme"
 
 import Header from "./header"
-import "./layout.css"
 
 const Container = styled.div`
   margin: 0 auto;
@@ -60,7 +61,8 @@ const Layout = ({ children }: Props) => (
       }
     `}
     render={data => (
-      <>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
         <Header siteTitle={data.site.siteMetadata.title} />
         <Menu>
           <List>
@@ -85,7 +87,7 @@ const Layout = ({ children }: Props) => (
           <main>{children}</main>
           <Footer>FemCoLab 2019</Footer>
         </Container>
-      </>
+      </ThemeProvider>
     )}
   />
 )
