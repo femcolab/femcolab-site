@@ -3,7 +3,7 @@ const path = require("path")
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
-  const memberTemplate = path.resolve(`src/templates/member.js`)
+  const memberTemplate = path.resolve(`src/templates/member.tsx`)
 
   const createPagePath = name =>
     `/member/${name
