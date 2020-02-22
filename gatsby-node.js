@@ -1,4 +1,4 @@
-const path = require("path")
+const path = require('path')
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
@@ -7,8 +7,8 @@ exports.createPages = ({ actions, graphql }) => {
 
   const createPagePath = name =>
     `/member/${name
-      .split(" ")
-      .join("-")
+      .split(' ')
+      .join('-')
       .toLowerCase()}`
 
   return graphql(`
@@ -30,7 +30,7 @@ exports.createPages = ({ actions, graphql }) => {
     if (result.errors) {
       return Promise.reject(result.errors)
     }
-    console.log("result: ", JSON.stringify(result))
+    console.log('result: ', JSON.stringify(result))
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
         path: createPagePath(node.frontmatter.name),
