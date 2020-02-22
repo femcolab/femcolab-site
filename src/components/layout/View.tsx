@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useState } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import styled, { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from './styles/global'
@@ -24,30 +24,34 @@ type Props = {
   children: ReactNode
 }
 
-const View = ({ children }: Props) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
+const View = ({ children }: Props) => {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <StaticQuery
+      query={graphql`
+        query SiteTitleQuery {
+          site {
+            siteMetadata {
+              title
+            }
           }
         }
-      }
-    `}
-    render={data => (
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Burger />
-        <Menu />
-        {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-        <Container>
-          <main>{children}</main>
-          <Footer>FemCoLab 2019</Footer>
-        </Container>
-      </ThemeProvider>
-    )}
-  />
-)
+      `}
+      render={data => (
+        <ThemeProvider theme={theme}>
+          <GlobalStyles />
+          <Burger open={open} setOpen={setOpen} />
+          <Menu open={open} />
+          {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
+          <Container>
+            <main>{children}</main>
+            <Footer>FemCoLab 2019</Footer>
+          </Container>
+        </ThemeProvider>
+      )}
+    />
+  )
+}
 
 export default View

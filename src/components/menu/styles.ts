@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledMenu = styled.nav`
+export const StyledMenu = styled.nav<{ open: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,6 +13,7 @@ export const StyledMenu = styled.nav`
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
+  transform: ${({ open }) => (open ? 'translateY(0)' : 'translateY(-100%)')};
 
   a {
     font-size: 2rem;

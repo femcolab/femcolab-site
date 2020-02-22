@@ -1,9 +1,9 @@
 import React from 'react'
 import { StyledMenu } from './styles'
 
-const View = () => {
+const View = ({ open }: { open: boolean }) => {
   return (
-    <StyledMenu>
+    <StyledMenu open={open}>
       <a href="#community">Community</a>
       <a href="#members">Members</a>
       <a href="/">Join us</a>
