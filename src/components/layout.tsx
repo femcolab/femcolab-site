@@ -5,8 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
+import React, { ReactNode } from "react"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
@@ -44,7 +43,12 @@ const ListItem = styled.li`
     text-decoration: none;
   }
 `
-const Layout = ({ children }) => (
+
+type Props = {
+  children: ReactNode
+}
+
+const Layout = ({ children }: Props) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -85,9 +89,5 @@ const Layout = ({ children }) => (
     )}
   />
 )
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
 
 export default Layout

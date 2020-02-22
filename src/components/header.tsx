@@ -1,5 +1,4 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
@@ -13,14 +12,10 @@ const Container = styled.header`
   /* visibility: none; */
 `
 
-const Header = ({ siteTitle }) => <Container />
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+type Props = {
+  siteTitle?: string
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+const Header = ({ siteTitle }: Props) => <Container />
 
 export default Header
