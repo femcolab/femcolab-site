@@ -9,8 +9,6 @@ export const StyledLogo = styled.img`
 
 export const Container = styled.div`
   margin: 0 auto;
-  max-width: 1500px;
-  padding: 2rem;
   border: solid 1px red;
 `
 

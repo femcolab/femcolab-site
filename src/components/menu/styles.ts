@@ -4,7 +4,7 @@ export const StyledMenu = styled.nav<{ open: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: ${({ theme }) => theme.primaryDark};
+  background: ${({ theme }) => theme.primaryHover};
   height: 100vh;
   width: 100vw;
   text-align: center;
