@@ -19,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    font-family: sans-serif;
+    font-family: 'Fira Code', sans-serif;
     background: ${({ theme }: { theme: ThemeProps }) => theme.primaryLight};
     color: ${({ theme }) => theme.primaryDark};
   }

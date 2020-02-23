@@ -85,7 +85,12 @@ function SEO({ description, lang, meta, keywords, title }: Props) {
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={metaData}
-    />
+    >
+      <link
+        href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap"
+        rel="stylesheet"
+      />
+    </Helmet>
   )
 }
 
