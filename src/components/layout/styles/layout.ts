@@ -9,7 +9,6 @@ export const StyledLogo = styled.img`
 
 export const Container = styled.div`
   margin: 0 auto;
-  border: solid 1px red;
 `
 
 export const Footer = styled.footer`
