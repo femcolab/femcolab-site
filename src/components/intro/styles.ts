@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.section`
   display: grid;
-  grid-template-columns: 20% 5% auto 25% [logo-end] 20%;
+  grid-template-columns: 20% 10% auto 25% [logo-end] 20%;
   grid-template-rows: 1.5fr 1fr 1fr 0.5fr;
   height: 100vh;
   background: ${({ theme }) => theme.primaryDark};
@@ -34,7 +34,7 @@ export const AboutUs = styled.h2`
   grid-column: 2;
   grid-row: 3;
   text-transform: lowercase;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   writing-mode: vertical-lr;
   color: ${({ theme }) => theme.primaryLight};
   margin: 0;
