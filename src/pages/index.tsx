@@ -7,14 +7,14 @@ import SEO from '../components/seo'
 import { Section } from '../styles'
 import Intro from '../components/intro'
 import Community from '../components/community'
+import Members from '../components/members'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Intro />
     <Community id="community" />
-    <Section id="members">Members</Section>
-    <Section id="wemeetfor">We Meet For</Section>
+    <Members id="members" />
     <Section id="gallery">Gallery</Section>
   </Layout>
 )
