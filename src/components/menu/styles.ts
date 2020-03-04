@@ -4,7 +4,7 @@ export const StyledMenu = styled.nav<{ open: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: ${({ theme }) => theme.primaryHover};
+  background: ${({ theme }) => theme.primaryPurple};
   height: 100vh;
   width: 100vw;
   text-align: center;
@@ -23,10 +23,10 @@ export const StyledMenu = styled.nav<{ open: boolean }>`
     letter-spacing: 0.5rem;
     color: ${({ theme }) => theme.primaryLight};
     text-decoration: none;
-    transition: color 0.3s linear;
+    transition: color 0.1s linear;
 
     &:hover {
-      color: ${({ theme }) => theme.primaryHover};
+      color: ${({ theme }) => theme.primaryPink};
     }
   }
 `

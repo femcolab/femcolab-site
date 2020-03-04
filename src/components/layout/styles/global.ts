@@ -4,7 +4,7 @@ import { normalize } from 'styled-normalize'
 type ThemeProps = {
   primaryDark?: string
   primaryLight?: string
-  primaryHover?: string
+  primaryPurple?: string
   mobile?: string
 }
 
