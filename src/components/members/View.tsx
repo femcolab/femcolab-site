@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import { createSlug } from '../../utils/page'
 
 import {
   Container,
@@ -7,28 +9,62 @@ import {
   WeMeetForTitleContainer,
   MembersListContainer,
   WeMeetForList,
+  StyledLink,
 } from './styles'
 
-const View = ({ id }: { id: string }) => (
-  <Container>
-    <Emojis>👩🏽👩🏻👩🏻‍💻</Emojis>
-    <WeMeetForTitleContainer>
-      <h2>We meet for</h2>
-    </WeMeetForTitleContainer>
-    <WeMeetForBox>
-      <WeMeetForList>
-        <p>Study Groups</p>
-        <p>Challenges</p>
-        <p>Workshops</p>
-      </WeMeetForList>
-    </WeMeetForBox>
-    <MembersListContainer>
-      <h2>Members</h2>
-      <p>Chloe Kuyers</p>
-      <p>Lina Chan</p>
-      <p>Duyen Ho</p>
-    </MembersListContainer>
-  </Container>
-)
+const View = ({ id }: { id: string }) => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        allMarkdownRemark(
+          sort: { order: ASC, fields: [frontmatter___memberSince] }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                name
+              }
+            }
+          }
+        }
+      }
+    `
+  )
+  console.log(data)
+  const { edges: members } = data.allMarkdownRemark
+
+  type MemberLinks = () => ReactElement
+
+  const renderMemberLinks: MemberLinks = () =>
+    members.map(({ node, i }: { node: any; i: string }) => {
+      const url = `/member/${createSlug(node.frontmatter.name)}`
+
+      return (
+        <StyledLink to={url} key={i}>
+          {node.frontmatter.name}
+        </StyledLink>
+      )
+    })
+
+  return (
+    <Container>
+      <Emojis>👩🏽👩🏻👩🏻‍💻</Emojis>
+      <WeMeetForTitleContainer>
+        <h2>We meet for</h2>
+      </WeMeetForTitleContainer>
+      <WeMeetForBox>
+        <WeMeetForList>
+          <p>Study Groups</p>
+          <p>Challenges</p>
+          <p>Workshops</p>
+        </WeMeetForList>
+      </WeMeetForBox>
+      <MembersListContainer>
+        <h2>Members</h2>
+        {renderMemberLinks()}
+      </MembersListContainer>
+    </Container>
+  )
+}
 
 export default View

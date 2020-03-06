@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 export const Container = styled.section`
   display: grid;
@@ -54,10 +55,19 @@ export const WeMeetForList = styled.div`
 export const MembersListContainer = styled.div`
   grid-column: 2;
   grid-row: 3;
-  text-transform: uppercase;
   margin-top: -100px;
+  text-transform: uppercase;
+`
 
-  p {
-    font-size: 0.8rem;
+export const StyledLink = styled(Link)`
+  display: block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.8rem;
+  margin: 1rem 0;
+
+  :hover,
+  :visited {
+    color: initial;
   }
 `

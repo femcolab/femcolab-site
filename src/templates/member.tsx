@@ -13,8 +13,8 @@ export default function Template({
   return (
     <div className="blog-post-container">
       <div className="blog-post">
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
+        <h1>{frontmatter.name}</h1>
+        <p>Member since {frontmatter.memberSince}</p>
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}
@@ -29,9 +29,8 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { name: { eq: $name } }) {
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         name
-        title
+        memberSince(formatString: "MMMM DD, YYYY")
       }
     }
   }

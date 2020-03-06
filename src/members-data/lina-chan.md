@@ -1,5 +1,6 @@
 ---
 name: 'Lina Chan'
-title: 'My first blog post'
-date: '2017-11-07'
+memberSince: '2015-05-04'
 ---
+
+Lorem ipsum dolor

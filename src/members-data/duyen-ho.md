@@ -1,5 +1,6 @@
 ---
 name: 'Duyen Ho'
-title: 'My first blog post'
-date: '2017-11-07'
+memberSince: '2016-07-24'
 ---
+
+Lorem ipsum dolor
