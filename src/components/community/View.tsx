@@ -2,8 +2,8 @@ import React from 'react'
 
 import { Container, Line } from './styles'
 
-const View = ({ id }: { id: string }) => (
-  <Container>
+const View = () => (
+  <Container id="community">
     <Line />
     <h2>Community</h2>
     <p>

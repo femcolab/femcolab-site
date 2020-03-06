@@ -9,11 +9,11 @@ import Gallery from '../components/gallery'
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Home" />
     <Intro />
-    <Community id="community" />
-    <Members id="members" />
-    <Gallery id="gallery" />
+    <Community />
+    <Members />
+    <Gallery />
   </Layout>
 )
 

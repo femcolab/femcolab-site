@@ -2,8 +2,8 @@ import React from 'react'
 
 import { Container, Heading, ImageWrapper } from './styles'
 
-const View = ({ id }: { id: string }) => (
-  <Heading>
+const View = () => (
+  <section id="gallery">
     <Heading>Gallery</Heading>
     <Container>
       <ImageWrapper />
@@ -11,7 +11,7 @@ const View = ({ id }: { id: string }) => (
       <ImageWrapper />
       <ImageWrapper />
     </Container>
-  </Heading>
+  </section>
 )
 
 export default View

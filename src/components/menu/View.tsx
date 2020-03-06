@@ -6,8 +6,8 @@ const View = ({ open }: { open: boolean }) => {
     <StyledMenu open={open}>
       <a href="#community">Community</a>
       <a href="#members">Members</a>
-      <a href="/">Join</a>
       <a href="#gallery">Gallery</a>
+      <a href="/join">Join</a>
     </StyledMenu>
   )
 }

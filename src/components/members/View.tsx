@@ -13,7 +13,7 @@ import {
   JoinLink,
 } from './styles'
 
-const View = ({ id }: { id: string }) => {
+const View = () => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -48,7 +48,7 @@ const View = ({ id }: { id: string }) => {
     })
 
   return (
-    <Container>
+    <Container id="members">
       <Emojis>👩🏽👩🏻👩🏻‍💻</Emojis>
       <WeMeetForTitleContainer>
         <h2>We meet for</h2>
