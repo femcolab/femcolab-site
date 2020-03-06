@@ -10,6 +10,7 @@ import {
   MembersListContainer,
   WeMeetForList,
   StyledLink,
+  JoinLink,
 } from './styles'
 
 const View = ({ id }: { id: string }) => {
@@ -62,6 +63,7 @@ const View = ({ id }: { id: string }) => {
       <MembersListContainer>
         <h2>Members</h2>
         {renderMemberLinks()}
+        <JoinLink to={'/join'}>Join</JoinLink>
       </MembersListContainer>
     </Container>
   )

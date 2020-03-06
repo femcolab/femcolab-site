@@ -54,8 +54,8 @@ export const WeMeetForList = styled.div`
 
 export const MembersListContainer = styled.div`
   grid-column: 2;
-  grid-row: 3;
-  margin-top: -100px;
+  grid-row: 2;
+  margin-top: -3rem;
   text-transform: uppercase;
 `
 
@@ -69,5 +69,24 @@ export const StyledLink = styled(Link)`
   :hover,
   :visited {
     color: initial;
+  }
+`
+
+export const JoinLink = styled(Link)`
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 10px;
+  background-color: ${({ theme }) => theme.primaryBlue};
+  color: ${({ theme }) => theme.primaryLight};
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: capitalize;
+
+  :hover {
+    background-color: ${({ theme }) => theme.primaryPink};
+  }
+
+  :visited {
+    color: ${({ theme }) => theme.primaryLight};
   }
 `
