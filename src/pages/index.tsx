@@ -1,13 +1,11 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import Layout from '../components/layout/View'
 import SEO from '../components/seo'
-
-import { Section } from '../styles'
 import Intro from '../components/intro'
 import Community from '../components/community'
 import Members from '../components/members'
+import Gallery from '../components/gallery'
 
 const IndexPage = () => (
   <Layout>
@@ -15,7 +13,7 @@ const IndexPage = () => (
     <Intro />
     <Community id="community" />
     <Members id="members" />
-    <Section id="gallery">Gallery</Section>
+    <Gallery id="gallery" />
   </Layout>
 )
 
