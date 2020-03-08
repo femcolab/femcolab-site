@@ -1,5 +1,6 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import { MemberLinks, MemberProps } from './types'
 import { createSlug } from '../../utils/page'
 
 import {
@@ -31,17 +32,14 @@ const View = () => {
       }
     `
   )
-  console.log(data)
+
   const { edges: members } = data.allMarkdownRemark
 
-  type MemberLinks = () => ReactElement
-
   const renderMemberLinks: MemberLinks = () =>
-    members.map(({ node, i }: { node: any; i: string }) => {
-      const url = `/member/${createSlug(node.frontmatter.name)}`
-
+    members.map(({ node }: MemberProps) => {
+      const url = `/${createSlug(node.frontmatter.name)}`
       return (
-        <StyledLink to={url} key={i}>
+        <StyledLink to={url} key={url}>
           {node.frontmatter.name}
         </StyledLink>
       )
