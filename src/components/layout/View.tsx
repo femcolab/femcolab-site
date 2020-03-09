@@ -4,8 +4,8 @@ import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from './styles/global'
 import { theme } from './styles/theme'
 
-import Burger from '../burger'
-import Menu from '../menu'
+import Burger from '../navigation/burger'
+import Menu from '../navigation/menu'
 import logoSvg from '../../images/fcl-logo.svg'
 import { StyledLogo, Container, Footer } from './styles/layout'
 
@@ -27,11 +27,11 @@ const View = ({ children }: Props) => {
           }
         }
       `}
-      render={data => (
+      render={() => (
         <ThemeProvider theme={theme}>
           <GlobalStyles />
           <Burger open={open} setOpen={setOpen} />
-          <Menu open={open} />
+          <Menu open={open} setOpen={setOpen} />
           <a href="/">
             <StyledLogo src={logoSvg} />
           </a>

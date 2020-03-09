@@ -14,19 +14,19 @@ export const StyledMenu = styled.nav<{ open: boolean }>`
   left: 0;
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => (open ? 'translateY(0)' : 'translateY(-100%)')};
+`
 
-  a {
-    font-size: 2rem;
-    text-transform: uppercase;
-    padding: 2rem 0;
-    font-weight: bold;
-    letter-spacing: 0.5rem;
-    color: ${({ theme }) => theme.primaryLight};
-    text-decoration: none;
-    transition: color 0.1s linear;
+export const StyledLink = styled.a`
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 2rem 0;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  color: ${({ theme }) => theme.primaryLight};
+  text-decoration: none;
+  transition: color 0.1s linear;
 
-    &:hover {
-      color: ${({ theme }) => theme.primaryPink};
-    }
+  &:hover {
+    color: ${({ theme }) => theme.primaryPink};
   }
 `

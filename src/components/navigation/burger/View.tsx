@@ -1,12 +1,8 @@
 import React from 'react'
 import { StyledBurger } from './styles'
+import { BurgerMenuProps } from '../types'
 
-export type Props = {
-  open: boolean
-  setOpen: (isOpen: boolean) => void
-}
-
-const View = ({ open, setOpen }: Props) => {
+const View = ({ open, setOpen }: BurgerMenuProps) => {
   return (
     <StyledBurger open={open} onClick={() => setOpen(!open)}>
       <div />
