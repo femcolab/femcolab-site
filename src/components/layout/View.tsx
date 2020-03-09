@@ -1,13 +1,13 @@
 import React, { ReactNode, useState } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { ThemeProvider } from 'styled-components'
-import { GlobalStyles } from './styles/global'
-import { theme } from './styles/theme'
 
+import { theme } from './styles/theme'
+import { GlobalStyles } from './styles/global'
+import { Container, Footer } from './styles/layout'
 import Burger from '../navigation/burger'
 import Menu from '../navigation/menu'
-import logoSvg from '../../images/fcl-logo.svg'
-import { StyledLogo, Container, Footer } from './styles/layout'
+import Logo from '../logo'
 
 type Props = {
   children: ReactNode
@@ -33,7 +33,7 @@ const View = ({ children }: Props) => {
           <Burger open={open} setOpen={setOpen} />
           <Menu open={open} setOpen={setOpen} />
           <a href="/">
-            <StyledLogo src={logoSvg} />
+            <Logo />
           </a>
           <Container>
             <main>{children}</main>
