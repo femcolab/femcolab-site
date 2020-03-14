@@ -6,7 +6,7 @@ import { theme } from './styles/theme'
 import { GlobalStyles } from './styles/global'
 import { Container, Footer } from './styles/layout'
 import Burger from '../navigation/burger'
-import Menu from '../navigation/menu'
+import MenuTray from '../navigation/menu-tray'
 import MenuBar from '../navigation/menu-bar'
 
 type Props = {
@@ -31,7 +31,7 @@ const View = ({ isIntersecting, children }: Props) => {
       render={() => (
         <ThemeProvider theme={theme}>
           <GlobalStyles />
-          <Menu open={open} setOpen={setOpen} />
+          <MenuTray open={open} setOpen={setOpen} />
           <Burger open={open} setOpen={setOpen} />
           <MenuBar isIntersecting={isIntersecting} />
           <Container>
