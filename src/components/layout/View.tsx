@@ -7,13 +7,14 @@ import { GlobalStyles } from './styles/global'
 import { Container, Footer } from './styles/layout'
 import Burger from '../navigation/burger'
 import Menu from '../navigation/menu'
-import Logo from '../logo'
+import MenuBar from '../navigation/menu-bar'
 
 type Props = {
+  isIntersecting: boolean
   children: ReactNode
 }
 
-const View = ({ children }: Props) => {
+const View = ({ isIntersecting, children }: Props) => {
   const [open, setOpen] = useState(false)
 
   return (
@@ -30,11 +31,9 @@ const View = ({ children }: Props) => {
       render={() => (
         <ThemeProvider theme={theme}>
           <GlobalStyles />
-          <Burger open={open} setOpen={setOpen} />
           <Menu open={open} setOpen={setOpen} />
-          <a href="/">
-            <Logo />
-          </a>
+          <Burger open={open} setOpen={setOpen} />
+          <MenuBar isIntersecting={isIntersecting} />
           <Container>
             <main>{children}</main>
             <Footer>FemCoLab 2019</Footer>

@@ -13,7 +13,7 @@ export const StyledBurger = styled.button<any>`
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10;
+  z-index: 100;
 
   &:focus {
     outline: none;
@@ -22,8 +22,6 @@ export const StyledBurger = styled.button<any>`
   div {
     width: 2rem;
     height: 0.25rem;
-    /* background: ${({ theme, open }) =>
-      open ? theme.primaryLight : theme.primaryDark}; */
     background: ${({ theme }) => theme.primaryLight};
     border-radius: 10px;
     transition: all 0.3s linear;
