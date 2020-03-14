@@ -4,8 +4,8 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout/View'
 import SEO from '../components/seo'
 
-const JoinPage = () => (
-  <Layout>
+const JoinPage = ({ isIntersecting }: { isIntersecting: boolean }) => (
+  <Layout isIntersecting={isIntersecting}>
     <SEO title="Join" />
     <div>
       <h1>Join</h1>

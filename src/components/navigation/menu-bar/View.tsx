@@ -1,6 +1,13 @@
 import React from 'react'
 
-import { MenuBar, LogoSvg, LogoGroup, HashEye } from './styles'
+import {
+  MenuBar,
+  LogoSvg,
+  LogoGroup,
+  HashEye,
+  StyledMenu,
+  StyledLink,
+} from './styles'
 
 type Props = {
   isIntersecting: boolean
@@ -31,6 +38,12 @@ const View = ({ isIntersecting }: Props) => {
           </HashEye>
         </LogoSvg>
       </a>
+      <StyledMenu isIntersecting={isIntersecting}>
+        <StyledLink href="#community">Community</StyledLink>
+        <StyledLink href="#members">Members</StyledLink>
+        <StyledLink href="#gallery">Gallery</StyledLink>
+        <StyledLink href="/join">Join</StyledLink>
+      </StyledMenu>
     </MenuBar>
   )
 }
