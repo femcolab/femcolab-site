@@ -10,6 +10,7 @@ export const MenuBar = styled.div<{ isIntersecting: boolean }>`
     isIntersecting && theme.primaryPurple};
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
+  z-index: 200;
 `
 
 export const LogoSvg = styled.svg<{ isIntersecting: boolean }>`

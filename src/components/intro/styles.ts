@@ -1,11 +1,14 @@
 import styled from 'styled-components'
 
-export const Container = styled.section`
+export const Container = styled.section<{ isIntersecting: boolean }>`
   display: grid;
   grid-template-columns: 20% 10% auto 25% [logo-end] 20%;
   grid-template-rows: 1.5fr 1fr 1fr 0.5fr;
   height: 100vh;
-  background: ${({ theme }) => theme.primaryDark};
+  background: ${({ theme, isIntersecting }) =>
+    isIntersecting ? 'transparent' : `${theme.primaryDark}`};
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out;
 `
 export const LogoContainer = styled.div`
   grid-column: 2;

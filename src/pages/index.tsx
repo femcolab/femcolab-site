@@ -19,7 +19,7 @@ const IndexPage = () => {
 
   useEffect(() => {
     const options = {
-      rootMargin: '1000px 0px -85%',
+      rootMargin: '1000px 0px -80%',
       threshold: 0,
     }
     const observer = new IntersectionObserver(handleIntersect, options)
@@ -31,7 +31,7 @@ const IndexPage = () => {
   return (
     <Layout isIntersecting={isIntersecting}>
       <SEO title="Home" />
-      <Intro />
+      <Intro isIntersecting={isIntersecting} />
       <Community />
       <Members />
       <Gallery />

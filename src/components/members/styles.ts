@@ -29,7 +29,7 @@ export const WeMeetForBox = styled.div`
 export const WeMeetForTitleContainer = styled.div`
   grid-column: 5;
   grid-row: 2;
-  z-index: 20;
+  z-index: 100;
 
   h2 {
     margin-top: 1rem;

@@ -11,8 +11,8 @@ import {
   Line,
 } from './styles'
 
-const View = () => (
-  <Container>
+const View = ({ isIntersecting }: { isIntersecting: boolean }) => (
+  <Container isIntersecting={isIntersecting}>
     <LogoContainer>
       <TextLogo src={logoText} />
     </LogoContainer>
