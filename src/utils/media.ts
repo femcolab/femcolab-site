@@ -8,10 +8,10 @@ export const sizes: Breakpoints = {
   large: 992,
 }
 
-type Media = {
-  small: () => void
-  medium: () => void
-  large: () => void
+interface Media {
+  small(...template: TemplateStringsArray<T>[]): string
+  medium(...template: TemplateStringsArray<T>[]): string
+  large(...template: TemplateStringsArray<T>[]): string
 }
 
 const media = Object.keys(sizes).reduce((acc: any, label: string) => {
